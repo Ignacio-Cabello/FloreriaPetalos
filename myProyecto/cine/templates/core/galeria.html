@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+
+{% block titulo %}
+    Galeria de Flores - Floreria Petalos
+{% endblock titulo %}
+
+{% load static %}    
+
+{% block contenido %}
+ <!-- sector del menu -->
+        <h2>Listado Flores</h2>
+
+       {% for p in lista %}   
+
+       
+           
+        <div class="pelicula">
+            <h3>{{p.name}} </h3>
+            <img src="{{p.imagen.url}}" width="100" height="150">
+            <h3>{{p.valor}} </h3>
+            
+            <div> <a href="{% url 'ELIMINA' p.name %}">Eliminar</a> </div>
+            <div> <a href="{% url 'AGREGAR' p.name %}">Agregar a Carrito</a> </div>
+        </div>
+        {% endfor %}
+
+    
+{% endblock contenido %}
+       

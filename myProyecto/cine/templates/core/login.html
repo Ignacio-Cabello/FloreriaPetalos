@@ -1,0 +1,27 @@
+{% extends "core/base.html" %}
+{% block titulo %}
+    Login de Acceso
+{% endblock titulo %}
+{% load static %}
+{% block contenido %}
+    <h1>Login de Acceso</h1>
+    <form action="{% url 'LOGINACCESO' %}" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Nombre Usuario:</td>
+                <td> <input type="text" name="txtUser"> </td>
+            </tr>
+            <tr>
+                <td>Ingrese Contraseña:</td>
+                <td> <input type="password" name="txtPass"> </td>
+            </tr>
+            <tr>
+                <td> <input type="submit" value="Ingresar">  </td>
+                
+            </tr>
+        </table>
+    </form>
+    <h1>{{msg}}</h1>
+
+{% endblock contenido %}
